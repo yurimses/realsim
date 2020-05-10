@@ -57,7 +57,7 @@ public class RealSimFile extends VisPlugin implements ActionListener {
 	
 	RealSim rs;
 	public JPanel controlPanel = new JPanel();
-	JTextField filename = new JTextField("/home/inf4/morty/tmp/rsdump");
+	JTextField filename = new JTextField("/home/yuri/contiki/examples/er-rest-example/realsim_events.h");
 	JButton select_file = new JButton("Open File");
 	JComboBox<Object> default_node;
 	JButton load = new JButton("Import");
@@ -305,6 +305,7 @@ public class RealSimFile extends VisPlugin implements ActionListener {
 					
 					exind = 1; exreason = "Time";
 					long time = new Long(t[0]);
+					time = time*60000; //Permite a entrada de tempo em minuto
 					t[1] = t[1].toLowerCase();
 					
 					if (t[1].equals("addnode")) {						
